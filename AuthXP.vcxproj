@@ -62,8 +62,8 @@
     <ProjectGuid>{dd1a9c44-ef9a-406e-8023-38085c2b3bde}</ProjectGuid>
     <RootNamespace>ConsoleLogon</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>AuthUX</ProjectName>
-    <TargetName>AuthUX</TargetName>
+    <ProjectName>AuthXP</ProjectName>
+    <TargetName>AuthXP</TargetName>
     <_ConfigurationSepIndex>$(Configuration.IndexOf('.'))</_ConfigurationSepIndex>
     <_ConfigurationWithoutSpecifier Condition="$(_ConfigurationSepIndex) != -1">$(Configuration.Substring(0, $(_ConfigurationSepIndex)))</_ConfigurationWithoutSpecifier>
     <_ConfigurationWithoutSpecifier Condition="$(_ConfigurationSepIndex) == -1">Release</_ConfigurationWithoutSpecifier>
@@ -114,7 +114,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;CONSOLELOGON_FOR=$(_Variant);__WRL_CONFIGURATION_LEGACY__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\dui70;shell\auth\authux\consolelogon\lib;shell\auth\authux\consolelogon\dll;sdk\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\dui70;shell\auth\authxp\consolelogon\lib;shell\auth\authxp\consolelogon\dll;sdk\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <UseFullPaths>false</UseFullPaths>
@@ -126,7 +126,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ModuleDefinitionFile>shell\auth\authux\consolelogon\dll\ConsoleLogon.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>shell\auth\authxp\consolelogon\dll\ConsoleLogon.def</ModuleDefinitionFile>
       <AdditionalDependencies>runtimeobject.lib;Shlwapi.lib;PowrProf.lib;Wtsapi32.lib;gdiplus.lib;comctl32.lib;shcore.lib;slc.lib;Dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -139,7 +139,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;CONSOLELOGON_FOR=$(_Variant);__WRL_CONFIGURATION_LEGACY__;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\dui70;shell\auth\authux\consolelogon\lib;shell\auth\authux\consolelogon\dll;sdk\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)\dui70;shell\auth\authxp\consolelogon\lib;shell\auth\authxp\consolelogon\dll;sdk\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <Optimization>MinSpace</Optimization>
@@ -154,7 +154,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ModuleDefinitionFile>shell\auth\authux\consolelogon\dll\ConsoleLogon.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>shell\auth\authxp\consolelogon\dll\ConsoleLogon.def</ModuleDefinitionFile>
       <AdditionalDependencies>runtimeobject.lib;Shlwapi.lib;PowrProf.lib;Wtsapi32.lib;gdiplus.lib;comctl32.lib;shcore.lib;slc.lib;Dbghelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -162,31 +162,31 @@
     <ClCompile Include="sdk\inc\logonguids.cpp" />
     <ClCompile Include="sdk\inc\NotificationDispatcher.cpp" />
     <ClCompile Include="sdk\inc\wicutil.cpp" />
-    <ClCompile Include="shell\auth\authux\consolelogon\dll\dllmain.cpp" />
-    <ClCompile Include="shell\auth\authux\consolelogon\dll\pch.cpp">
+    <ClCompile Include="shell\auth\authxp\consolelogon\dll\dllmain.cpp" />
+    <ClCompile Include="shell\auth\authxp\consolelogon\dll\pch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="shell\auth\authux\consolelogon\lib\advisablebutton.cpp" />
-    <ClCompile Include="shell\auth\authux\consolelogon\lib\animationstrip.cpp" />
-    <ClCompile Include="shell\auth\authux\consolelogon\lib\backgroundfetcher.cpp" />
-    <ClCompile Include="shell\auth\authux\consolelogon\lib\combobox.cpp" />
-    <ClCompile Include="shell\auth\authux\consolelogon\lib\consolebsdrstub.cpp" />
-    <ClCompile Include="shell\auth\authux\consolelogon\lib\authuxlock.cpp" />
-    <ClCompile Include="shell\auth\authux\consolelogon\lib\authuxlockaction.cpp" />
-    <ClCompile Include="shell\auth\authux\consolelogon\lib\authux.cpp" />
-    <ClCompile Include="shell\auth\authux\consolelogon\lib\consoleuimanager.cpp" />
-    <ClCompile Include="shell\auth\authux\consolelogon\lib\DefaultSelector.cpp" />
-    <ClCompile Include="shell\auth\authux\consolelogon\lib\EventDispatcher.cpp" />
-    <ClCompile Include="shell\auth\authux\consolelogon\lib\fieldcontainer.cpp" />
-    <ClCompile Include="shell\auth\authux\consolelogon\lib\labeledcheckbox.cpp" />
-    <ClCompile Include="shell\auth\authux\consolelogon\lib\logonframe.cpp" />
-    <ClCompile Include="shell\auth\authux\consolelogon\lib\logonnativehwndhost.cpp" />
-    <ClCompile Include="shell\auth\authux\consolelogon\lib\logonviewmanager.cpp" />
-    <ClCompile Include="shell\auth\authux\consolelogon\lib\OptionalDependencyProvider.cpp" />
-    <ClCompile Include="shell\auth\authux\consolelogon\lib\restrictededit.cpp" />
-    <ClCompile Include="shell\auth\authux\consolelogon\lib\userlist.cpp" />
-    <ClCompile Include="shell\auth\authux\consolelogon\lib\usertileelement.cpp" />
-    <ClCompile Include="shell\auth\authux\consolelogon\lib\zoomableelement.cpp" />
+    <ClCompile Include="shell\auth\authxp\consolelogon\lib\advisablebutton.cpp" />
+    <ClCompile Include="shell\auth\authxp\consolelogon\lib\animationstrip.cpp" />
+    <ClCompile Include="shell\auth\authxp\consolelogon\lib\backgroundfetcher.cpp" />
+    <ClCompile Include="shell\auth\authxp\consolelogon\lib\combobox.cpp" />
+    <ClCompile Include="shell\auth\authxp\consolelogon\lib\consolebsdrstub.cpp" />
+    <ClCompile Include="shell\auth\authxp\consolelogon\lib\authuxlock.cpp" />
+    <ClCompile Include="shell\auth\authxp\consolelogon\lib\authuxlockaction.cpp" />
+    <ClCompile Include="shell\auth\authxp\consolelogon\lib\authux.cpp" />
+    <ClCompile Include="shell\auth\authxp\consolelogon\lib\consoleuimanager.cpp" />
+    <ClCompile Include="shell\auth\authxp\consolelogon\lib\DefaultSelector.cpp" />
+    <ClCompile Include="shell\auth\authxp\consolelogon\lib\EventDispatcher.cpp" />
+    <ClCompile Include="shell\auth\authxp\consolelogon\lib\fieldcontainer.cpp" />
+    <ClCompile Include="shell\auth\authxp\consolelogon\lib\labeledcheckbox.cpp" />
+    <ClCompile Include="shell\auth\authxp\consolelogon\lib\logonframe.cpp" />
+    <ClCompile Include="shell\auth\authxp\consolelogon\lib\logonnativehwndhost.cpp" />
+    <ClCompile Include="shell\auth\authxp\consolelogon\lib\logonviewmanager.cpp" />
+    <ClCompile Include="shell\auth\authxp\consolelogon\lib\OptionalDependencyProvider.cpp" />
+    <ClCompile Include="shell\auth\authxp\consolelogon\lib\restrictededit.cpp" />
+    <ClCompile Include="shell\auth\authxp\consolelogon\lib\userlist.cpp" />
+    <ClCompile Include="shell\auth\authxp\consolelogon\lib\usertileelement.cpp" />
+    <ClCompile Include="shell\auth\authxp\consolelogon\lib\zoomableelement.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
@@ -209,29 +209,29 @@
     <ClInclude Include="sdk\inc\wicutil.h" />
     <ClInclude Include="sdk\inc\windowscollections.h" />
     <ClInclude Include="sdk\inc\xhashmap.h" />
-    <ClInclude Include="shell\auth\authux\consolelogon\dll\pch.h" />
-    <ClInclude Include="shell\auth\authux\consolelogon\lib\advisablebutton.h" />
-    <ClInclude Include="shell\auth\authux\consolelogon\lib\animationstrip.h" />
-    <ClInclude Include="shell\auth\authux\consolelogon\lib\backgroundfetcher.h" />
-    <ClInclude Include="shell\auth\authux\consolelogon\lib\combobox.h" />
-    <ClInclude Include="shell\auth\authux\consolelogon\lib\authuxlockaction.h" />
-    <ClInclude Include="shell\auth\authux\consolelogon\lib\consoleuimanager.h" />
-    <ClInclude Include="shell\auth\authux\consolelogon\lib\DefaultSelector.h" />
-    <ClInclude Include="shell\auth\authux\consolelogon\lib\duiutil.h" />
-    <ClInclude Include="shell\auth\authux\consolelogon\lib\EventDispatcher.h" />
-    <ClInclude Include="shell\auth\authux\consolelogon\lib\fieldcontainer.h" />
-    <ClInclude Include="shell\auth\authux\consolelogon\lib\labeledcheckbox.h" />
-    <ClInclude Include="shell\auth\authux\consolelogon\lib\logonframe.h" />
-    <ClInclude Include="shell\auth\authux\consolelogon\lib\logonnativehwndhost.h" />
-    <ClInclude Include="shell\auth\authux\consolelogon\lib\logonviewmanager.h" />
-    <ClInclude Include="shell\auth\authux\consolelogon\lib\optionaldependencyprovider.h" />
-    <ClInclude Include="shell\auth\authux\consolelogon\lib\restrictededit.h" />
-    <ClInclude Include="shell\auth\authux\consolelogon\lib\userlist.h" />
-    <ClInclude Include="shell\auth\authux\consolelogon\lib\usertileelement.h" />
-    <ClInclude Include="shell\auth\authux\consolelogon\lib\zoomableelement.h" />
+    <ClInclude Include="shell\auth\authxp\consolelogon\dll\pch.h" />
+    <ClInclude Include="shell\auth\authxp\consolelogon\lib\advisablebutton.h" />
+    <ClInclude Include="shell\auth\authxp\consolelogon\lib\animationstrip.h" />
+    <ClInclude Include="shell\auth\authxp\consolelogon\lib\backgroundfetcher.h" />
+    <ClInclude Include="shell\auth\authxp\consolelogon\lib\combobox.h" />
+    <ClInclude Include="shell\auth\authxp\consolelogon\lib\authuxlockaction.h" />
+    <ClInclude Include="shell\auth\authxp\consolelogon\lib\consoleuimanager.h" />
+    <ClInclude Include="shell\auth\authxp\consolelogon\lib\DefaultSelector.h" />
+    <ClInclude Include="shell\auth\authxp\consolelogon\lib\duiutil.h" />
+    <ClInclude Include="shell\auth\authxp\consolelogon\lib\EventDispatcher.h" />
+    <ClInclude Include="shell\auth\authxp\consolelogon\lib\fieldcontainer.h" />
+    <ClInclude Include="shell\auth\authxp\consolelogon\lib\labeledcheckbox.h" />
+    <ClInclude Include="shell\auth\authxp\consolelogon\lib\logonframe.h" />
+    <ClInclude Include="shell\auth\authxp\consolelogon\lib\logonnativehwndhost.h" />
+    <ClInclude Include="shell\auth\authxp\consolelogon\lib\logonviewmanager.h" />
+    <ClInclude Include="shell\auth\authxp\consolelogon\lib\optionaldependencyprovider.h" />
+    <ClInclude Include="shell\auth\authxp\consolelogon\lib\restrictededit.h" />
+    <ClInclude Include="shell\auth\authxp\consolelogon\lib\userlist.h" />
+    <ClInclude Include="shell\auth\authxp\consolelogon\lib\usertileelement.h" />
+    <ClInclude Include="shell\auth\authxp\consolelogon\lib\zoomableelement.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="shell\auth\authux\consolelogon\dll\consolelogon.rc" />
+    <ResourceCompile Include="shell\auth\authxp\consolelogon\dll\consolelogon.rc" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="dui70\DirectUI\DirectUI.vcxproj">
@@ -243,7 +243,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="shell\auth\authux\consolelogon\dll\ConsoleLogon.def" />
+    <None Include="shell\auth\authxp\consolelogon\dll\ConsoleLogon.def" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
